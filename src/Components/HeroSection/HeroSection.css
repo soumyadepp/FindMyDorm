@@ -9,6 +9,7 @@
 .hero {
     background-color: rgba(0, 0, 0, .6);
     color: #fff;
+    margin-top: 75px;
     min-height: 80vh;
     width: 100%;
     position: relative;
@@ -34,6 +35,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     text-align: center;
     max-width: 700px;
     margin: auto;
@@ -51,6 +53,7 @@
 }
 
 .search {
+    width: 100%;
     display: flex;
     background-color: #fff;
     color: #333;
@@ -65,7 +68,7 @@
     padding: 5px;
     border: transparent;
     background-color: transparent;
-    width: 400px;
+    width: 100%;
     font-size: 1.2rem;
     font-family: 'Raleway', sans-serif;
 }
@@ -92,7 +95,22 @@
     cursor: pointer;
 }
 
+.university-cards-upper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.university-cards-header {
+    width: 100%;
+    margin-top: 85px;
+    font-size: 6.5vmin;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
 .university-cards {
+    height: auto;
     max-width: 80%;
     padding: 20px;
     display: grid;
@@ -100,6 +118,14 @@
     grid-gap: 15px;
     margin-right: 10px;
     ;
+}
+
+.no-of-results {
+    display: flex;
+    align-items: center;
+    font-size: 3vmin;
+    font-weight: 700;
+    margin-top: 10px;
 }
 
 @media screen and (max-width: 940px) {

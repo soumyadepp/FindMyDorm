@@ -6,7 +6,6 @@ const Featured = ({ house }) => {
   return (
     <div className="featured">
       <h1 className="featured-header">Featured House</h1>
-
       <div className="container">
         <img className="span-3 image-grid-row-2" src={house.image1} alt="" />
         <img src={house.image2} alt="" />

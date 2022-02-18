@@ -4,16 +4,31 @@ import HeroSection from "./Components/HeroSection/HeroSection";
 import Featured from "./Components/Featured/Featured";
 import featuredData from "./Data/featuredData";
 import Footer from "./Components/Footer/Footer";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Explore from "./Components/Explore/Explore";
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <HeroSection />
-      {featuredData.map((house) => (
-        <Featured house={house} />
-      ))}
-      <Footer />
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route
+            path="/"
+            exact
+            element={
+              <div>
+                <Navbar />
+                <HeroSection />
+                {featuredData.map((house, index) => (
+                  <Featured house={house} key={index} />
+                ))}
+              </div>
+            }
+          />
+          <Route path="/explore" element={<Explore />} />
+        </Routes>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

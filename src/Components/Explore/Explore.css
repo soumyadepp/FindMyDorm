@@ -1,0 +1,146 @@
+.explore-container {
+    height: calc(100vh);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar {
+    border-right: 1px solid #ccc;
+    height: calc(100vh);
+    display: flex;
+    flex: 0.2;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow-y: hidden;
+}
+
+.filter-list {
+    padding: 10px;
+    margin: 5px;
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.filter-list li {
+    margin: 5px;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #5651e5;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.filter-list li:hover {
+    background-color: #5651e5;
+    color: #fff;
+    transition: all 0.3s ease-in-out;
+}
+
+.explore-card-image {
+    width: auto;
+    height: 30vmin;
+    object-fit: contain;
+}
+
+.explore-card:hover {
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.explore-main {
+    height: calc(100vh);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+}
+
+.explore-card>img {
+    height: 40vmin;
+    width: auto;
+    object-fit: contain;
+}
+
+.explore-cards {
+    height: auto;
+    width: auto;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.explore-card {
+    margin: 10px;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-top: 10px;
+}
+
+.price-range {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.explore-card-btn-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.explore-head {
+    font-size: 3.5vmin;
+    margin-top: 10px;
+}
+
+.explore-card-info {
+    border-left: 1px solid #ccc;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+
+.explore-card-info>.explore-card-header {
+    font-size: 3.5vmin;
+    text-transform: capitalize;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.explore-card-info>.explore-card-subheader {
+    font-size: 2.5vmin;
+    margin-top: 20px;
+}
+
+.explore-card-cost {
+    font-size: 3.5vmin;
+    color: green;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.active {
+    background: #5651e5;
+    color: #fff;
+}

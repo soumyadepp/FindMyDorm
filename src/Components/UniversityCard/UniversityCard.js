@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import data from "../../Data/data";
+import React from "react";
+import { Link } from "react-router-dom";
 import "./UniversityCard.css";
 
 function UniversityCard({ universityData }) {
@@ -11,7 +11,15 @@ function UniversityCard({ universityData }) {
         <p>{universityData.location}</p>
       </div>
       <div className="btn-container">
-        <button className="btn">Explore</button>
+        <Link
+          to="/explore"
+          state={{
+            name: universityData.name,
+            location: universityData.location,
+          }}
+        >
+          <button className="btn">Explore</button>
+        </Link>
       </div>
     </div>
   );

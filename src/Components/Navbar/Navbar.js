@@ -8,6 +8,7 @@ import "./Navbar.css";
 function Navbar() {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
+  const handleClose = () => setClick(false);
   return (
     <div className="navbar">
       <div className="container">
@@ -20,16 +21,24 @@ function Navbar() {
         <button className="btn">Sign In</button>
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li>
-            <a href="#">Home</a>
+            <a href="#" onClick={handleClose}>
+              Home
+            </a>
           </li>
           <li>
-            <a href="#">Search</a>
+            <a href="#search" onClick={handleClose}>
+              Search
+            </a>
           </li>
           <li>
-            <a href="#">About</a>
+            <a href="#" onClick={handleClose}>
+              About
+            </a>
           </li>
           <li>
-            <a href="#">Contact</a>
+            <a href="#" onClick={handleClose}>
+              Contact
+            </a>
           </li>
         </ul>
         <div className="hamburger" onClick={handleClick}>
