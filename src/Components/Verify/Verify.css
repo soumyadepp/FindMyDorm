@@ -1,0 +1,15 @@
+.verify-container {
+    height: calc(100vh);
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+}
+
+.verify-container>h1 {
+    font-size: 6.5vmin;
+    color: #efefef;
+    text-shadow: 0px 0px 10px #000;
+}

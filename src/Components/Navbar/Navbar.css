@@ -17,6 +17,10 @@
     padding: 1rem;
 }
 
+.container>h1 {
+    font-size: 4vmin;
+}
+
 .navbar span {
     color: #5651e5;
 }
@@ -26,7 +30,8 @@
     color: #fff;
     border: none;
     padding: 10px;
-    width: auto;
+    margin-top:10px;
+    width: 100%;
     font-size: 3vmin;
     border-radius: 5px;
     cursor: pointer;
@@ -66,6 +71,9 @@
 @media screen and (max-width:940px) {
     .hamburger {
         display: block;
+    }
+    .container>h4 {
+        display: none;
     }
     .navbar .nav-menu {
         position: absolute;

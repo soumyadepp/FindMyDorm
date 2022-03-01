@@ -1,0 +1,13 @@
+.homepage-container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background: #5651e5;
+    justify-content: center;
+}
+
+.homepage-wrapper>h1 {
+    font-size: 6.5vmin;
+    color: #fff;
+    text-shadow: 0px 0px 10px #000;
+}

@@ -1,0 +1,127 @@
+.explore-card {
+    margin: 10px;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+@media(max-width:1024px) {
+    .explore-card {
+        flex-direction: column;
+    }
+}
+
+.explore-card:hover {
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.explore-image {
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+    flex: 0.85;
+}
+
+.explore-card>.explore-image>img {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+}
+
+@media(max-width:1024px) {
+    .explore-card>.explore-image>img {
+        height: auto;
+        width: 100%;
+    }
+}
+
+.explore-card-btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 5px;
+}
+
+.explore-card-info {
+    height: 100%;
+    margin: 10px;
+    border-left: 1px solid #ccc;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+@media(max-width:1024px) {
+    .explore-card-info {
+        border: none;
+    }
+}
+
+.explore-card-info>.explore-card-header {
+    font-size: 5vmin;
+    text-transform: capitalize;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.explore-card-info>.explore-card-subheader {
+    font-size: 3.5vmin;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.explore-card-cost {
+    font-size: 3.5vmin;
+    color: green;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.explore-card-content {
+    padding: 10px;
+    margin: 10px;
+    border-left: 2px solid #ccc;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ratings>h2 {
+    font-size: 3.5vmin;
+    color: #d10023;
+}
+
+.book {
+    background: #d10023;
+    color: #fff;
+}
+
+.book:hover {
+    background: #770303;
+}
+
+.ratings>h2>span {
+    color: green;
+}
+
+@media(max-width:1024px) {
+    .explore-card-content {
+        border: none;
+    }
+}
+
+.explore-card-desc {
+    font-size: 2.5vmin;
+    margin-top: 10px;
+}

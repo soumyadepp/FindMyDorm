@@ -1,10 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { AiOutlineSearch } from "react-icons/ai";
+import data from "../../Data/featuredData";
 import "./HeroSection.css";
 import universityData from "../../Data/data";
 import UniversityCard from "../UniversityCard/UniversityCard";
+import HouseCard from "../HouseCard/HouseCard";
+import { Link } from "react-router-dom";
 const HeroSection = () => {
+  const token = localStorage.getItem("token");
   const [search, setSearch] = useState("");
+  const university = localStorage.getItem("organization");
+  const [houses, setHouses] = useState(
+    data.filter((house) => house.colleges.includes(university))
+  );
+
   const [filteredUniversities, setFilteredUniversities] =
     useState(universityData);
   const handleChange = (e) => {
@@ -18,16 +26,42 @@ const HeroSection = () => {
   };
   return (
     <div className="hero-section">
-      <div className="hero">
-        <div className="content">
-          <h1>Find the perfect Dorm</h1>
-          <p className="search-text">
-            {" "}
-            Search the largest Section of dorms , hostels & PGs.{" "}
-          </p>
-          <button className="btn">Get Started</button>
+      {houses && (
+        <div className="personalized-info">
+          <div className="personalized-data">
+            <h1>
+              {" "}
+              Looking for <span>Dorms</span> near{" "}
+              <span>{localStorage.getItem("organization")}</span>?
+            </h1>
+            <p className="subtitle">
+              Since you are{" "}
+              {localStorage.getItem("occupation") == "Student" ||
+              localStorage.getItem("occupation") == "Businessman" ||
+              localStorage.getItem("occupation") == "Faculty"
+                ? `a ${localStorage.getItem("occupation")}`
+                : localStorage.getItem("occupation")}
+              , we have curated top available properties near you.
+            </p>
+            <div className="houses-near">
+              {houses.splice(0, 2).map((house, index) => (
+                <HouseCard dorm={house} />
+              ))}
+            </div>
+            <Link
+              className="link-router"
+              style={{ textDecoration: "none" }}
+              to="/explore"
+              state={{
+                name: university,
+                location: "all",
+              }}
+            >
+              <span>See more</span>
+            </Link>
+          </div>
         </div>
-      </div>
+      )}
       <div id="search"></div>
       <div className="university-cards-upper">
         <h1 className="university-cards-header">

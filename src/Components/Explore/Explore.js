@@ -1,17 +1,24 @@
 import React, { useEffect, useState } from "react";
 import data from "../../Data/featuredData";
 import { useLocation } from "react-router-dom";
+import HouseCard from "../HouseCard/HouseCard";
 import "./Explore.css";
 function Explore() {
   const location = useLocation();
-  const university = location.state.name;
+  const university =
+    location.state !== null ? location.state.name : "Top colleges";
   const [matchingDorms, setMatchingDorms] = useState(
     data.filter((dorm) => dorm.colleges.includes(university))
   );
+
   const [filter, setFilter] = useState("");
   const [filteredDorms, setFilteredDorms] = useState(data);
   const [priceFilter, setPriceFilter] = useState(20000);
   useEffect(() => {
+    if (localStorage.getItem("token") == null) {
+      window.location.href = "/login";
+    }
+    window.scrollTo(0, 0);
     setFilteredDorms(matchingDorms);
   }, [matchingDorms]);
   const changePriceFilter = (e) => {
@@ -73,9 +80,12 @@ function Explore() {
   };
 
   return (
-    <div className="explore-container">
+    <div className="explore-container" id="explore">
       <div className="sidebar">
-        <h2 className="sidebar-header">Service types</h2>
+        <h2 className="sidebar-header">
+          Dorms near
+          <br /> <span>{university}</span>
+        </h2>
         <ul className="filter-list">
           <li onClick={(e) => changeFilter("all")} id="all">
             All
@@ -90,9 +100,11 @@ function Explore() {
             Hostels
           </li>
         </ul>
-        <h2 className="sidebar-header">Price range</h2>
+
         <div className="price-range">
+          <h2 className="sidebar-header">Price range</h2>
           <input
+            className="price-range-input"
             list="prices"
             type="range"
             min="2000"
@@ -123,26 +135,12 @@ function Explore() {
         </div>
       </div>
       <div className="explore-main">
-        <div className="explore-head">
-          <p>Displaying places to stay near {university}</p>
-        </div>
         <div className="explore-cards">
+          {filteredDorms.length === 0 && (
+            <h2>No places to display near {university}</h2>
+          )}
           {filteredDorms.map((dorm, index) => (
-            <div className="explore-card">
-              <img src={dorm.image1} alt={dorm.name} />
-              <div className="explore-card-info">
-                <h1 className="explore-card-header">{dorm.name}</h1>
-                <h2 className="explore-card-subheader">{dorm.location}</h2>
-                <p className="explore-card-cost">Rs. {dorm.rent}/per month</p>
-                <p className="explore-card-desc">
-                  {dorm.bedrooms}BHK {dorm.tagline}
-                </p>
-                <div className="explore-card-btn-container">
-                  <button className="btn">Contact Owner</button>
-                </div>
-              </div>
-              <div className="explore-card-content"></div>
-            </div>
+            <HouseCard dorm={dorm} key={index} />
           ))}
         </div>
       </div>

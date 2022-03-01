@@ -1,5 +1,5 @@
 .university-card {
-    max-width: 75vmin;
+    max-width: 100%;
     height: auto;
     background-color: #fff;
     border-radius: 10px;
@@ -34,17 +34,7 @@
 
 .btn-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     width: 100%;
-}
-
-.btn-container>button {
-    background-color: #5651e5;
-    color: #fff;
-    border: none;
-    padding: 8px;
-    width: 100%;
-    font-size: 2.5vmin;
-    border-radius: 5px;
 }

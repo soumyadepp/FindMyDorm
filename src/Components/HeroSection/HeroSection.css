@@ -6,6 +6,70 @@
     z-index: -1;
 }
 
+.personalized-info {
+    max-height: 100%;
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.personalized-info>.personalized-data {
+    width: 80%;
+    padding: 20px;
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.houses-near {
+    margin: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+@media(max-width:1024px) {
+    .houses-near {
+        flex-direction: column;
+    }
+}
+
+.link-router>span {
+    padding: 10px;
+    font-size: 3vmin;
+    font-weight: bold;
+    color: #d10023;
+    border: 1px solid #ccc;
+}
+
+.link-router>span:hover {
+    background-color: #d10023;
+    color: #fff;
+    transition: all 0.3s ease-in;
+}
+
+.personalized-info>.personalized-data>h1 {
+    font-size: 6vmin;
+    color: #5651e5;
+}
+
+.personalized-data>h1>span {
+    color: #d10023;
+}
+
+.subtitle {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 3vmin;
+    margin-top: 10px;
+    font-weight: 600;
+    border-bottom: 2px solid #ccc;
+}
+
 .hero {
     background-color: rgba(0, 0, 0, .6);
     color: #fff;
