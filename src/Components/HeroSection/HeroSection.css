@@ -41,24 +41,22 @@
     padding: 10px;
     font-size: 3vmin;
     font-weight: bold;
-    color: #d10023;
+    color: #139487;
     border: 1px solid #ccc;
 }
 
 .link-router>span:hover {
-    background-color: #d10023;
+    background-color: #023d2e;
     color: #fff;
     transition: all 0.3s ease-in;
 }
 
 .personalized-info>.personalized-data>h1 {
-    font-size: 6vmin;
-    color: #5651e5;
+    font-size: 5vmin;
+    color: #6a66e0;
 }
 
-.personalized-data>h1>span {
-    color: #d10023;
-}
+
 
 .subtitle {
     padding: 10px;
@@ -70,51 +68,6 @@
     border-bottom: 2px solid #ccc;
 }
 
-.hero {
-    background-color: rgba(0, 0, 0, .6);
-    color: #fff;
-    margin-top: 75px;
-    min-height: 80vh;
-    width: 100%;
-    position: relative;
-    margin-bottom: 4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.hero:before {
-    content: '';
-    background: url('../../Assets/hero-img3.jpg') no-repeat center center/cover;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-}
-
-.hero .content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    max-width: 700px;
-    margin: auto;
-    padding: 1rem;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    text-transform: capitalize;
-}
-
-.hero .search-text {
-    margin: 1.5rem;
-    font-size: 1.4rem;
-}
 
 .search {
     width: 100%;

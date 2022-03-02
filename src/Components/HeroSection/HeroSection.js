@@ -12,7 +12,7 @@ const HeroSection = () => {
   const [houses, setHouses] = useState(
     data.filter((house) => house.colleges.includes(university))
   );
-
+  
   const [filteredUniversities, setFilteredUniversities] =
     useState(universityData);
   const handleChange = (e) => {
@@ -24,6 +24,11 @@ const HeroSection = () => {
     });
     setFilteredUniversities(newUniversities);
   };
+  useEffect(() => {
+    if (token == null) {
+      window.location.href = "/login";
+    }
+  }, []);
   return (
     <div className="hero-section">
       {houses && (

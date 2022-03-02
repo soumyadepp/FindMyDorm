@@ -81,7 +81,7 @@
 
 .explore-card-cost {
     font-size: 3.5vmin;
-    color: green;
+    color: #139487;
     margin-top: 5px;
     width: 100%;
 }
@@ -99,20 +99,20 @@
 
 .ratings>h2 {
     font-size: 3.5vmin;
-    color: #d10023;
+    color: #114ea5;
 }
 
 .book {
-    background: #d10023;
+    background: #139487;
     color: #fff;
 }
 
 .book:hover {
-    background: #770303;
+    background: #023d2e;
 }
 
 .ratings>h2>span {
-    color: green;
+    color: #5651e5;
 }
 
 @media(max-width:1024px) {
