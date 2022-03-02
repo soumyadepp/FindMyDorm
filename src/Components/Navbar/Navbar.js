@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { HiOutlineMenuAlt4 } from "react-icons/hi";
 import { FaRegTimesCircle } from "react-icons/fa";
 import { BsFillHouseFill } from "react-icons/bs";
-
+import {Link} from 'react-router-dom';
 import "./Navbar.css";
 
 function Navbar() {
@@ -12,11 +12,7 @@ function Navbar() {
   const token = localStorage.getItem("token");
   const firstName = localStorage.getItem("firstName");
   const lastName = localStorage.getItem("lastName");
-  useEffect(() => {
-    if (token == null) {
-      window.location.href = "/login";
-    }
-  }, []);
+ 
   return (
     <div className="navbar">
       <div className="container">
@@ -27,7 +23,7 @@ function Navbar() {
           ind<span>M</span>y<span>D</span>orm
         </h1>
 
-        {token && <h4>Hello {firstName}</h4>}
+        {token && <h2 className="welcome=message">Hello {firstName}</h2>}
 
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li>
@@ -53,7 +49,7 @@ function Navbar() {
         </ul>
         {!token && (
           <div>
-            <button className="btn">Sign In</button>
+            <Link to="/login"><button className="btn">Sign In</button></Link>
           </div>
         )}
         {token && (
