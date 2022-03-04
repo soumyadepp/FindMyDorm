@@ -8,7 +8,6 @@ import image7 from '../Assets/bed3.jpg';
 import image8 from '../Assets/bed4.jpg';
 import image9 from '../Assets/bath2.jpg';
 import image10 from '../Assets/living-room.jpg';
-
 const featuredData = [{
         image1: image1,
         image2: image2,
