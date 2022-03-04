@@ -23,7 +23,7 @@ function Navbar() {
           ind<span>M</span>y<span>D</span>orm
         </h1>
 
-        {token && <h2 className="welcome=message">Hello {firstName}</h2>}
+        {token && <h2 className="welcome=message  welcome-user">Hello {firstName}</h2>}
 
         <ul className={click ? "nav-menu active" : "nav-menu"}>
           <li>

@@ -1,7 +1,6 @@
 .login-container {
     height: 100vh;
-    background-color: #6a93cb;
-    background-image: linear-gradient(315deg, #6a93cb 0%, #a4bfef 74%);
+    background-image: linear-gradient(315deg, #eec0c6 0%, #7ee8fa 74%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,7 +38,7 @@
 
 .login-form>.submit-btn {
     padding: 8px;
-    background: #5651e5;
+    background: #114ea5;
     color: #fff;
     border: none;
     border-radius: 5px;
