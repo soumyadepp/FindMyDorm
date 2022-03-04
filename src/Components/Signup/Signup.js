@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
-import "./Signup.css";
+import "./Signup11.scss";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import image1 from '../../Assets/image1.svg';
+import data from '../../Data/data';
 import axios from "axios";
 function Signup() {
   const [firstName, setFirstName] = useState("");
@@ -12,6 +14,7 @@ function Signup() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const [orgData,setOrgData] = useState(data);
   const validateForm = () => {
     if (password.length == 0) {
       setError("");
@@ -35,6 +38,7 @@ function Signup() {
       //redirect to the home page
       window.location.href = "/home";
     }
+
     validateForm();
   }, [firstName, lastName, email, password, confirmPassword]);
   const handleSubmit = (e) => {
@@ -62,76 +66,87 @@ function Signup() {
   };
   return (
     <div className="signup-container">
-      <form className="signup-form">
-        <h1>Sign Up</h1>
-        <div className="form-group">
-          <input
-            type="text"
-            style={{ marginRight: "5px" }}
-            required="required"
-            placeholder="First Name"
-            onChange={(e) => setFirstName(e.target.value)}
-            value={firstName}
-          />
-          <input
-            type="text"
-            required="required"
-            placeholder="Last Name"
-            onChange={(e) => setLastName(e.target.value)}
-            value={lastName}
-          />
-        </div>
-        <input
-          type="text"
-          required="required"
-          placeholder="Email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
-        <select
-          onChange={(e) => setOccupation(e.target.value)}
-          value={occupation}
-        >
-          <option value="Occupation">Occupation</option>
-          <option value="Student">Student</option>
-          <option value="Faculty">Professor</option>
-          <option value="Businessman">Businessman</option>
-          <option value="Employed">Employed</option>
-          <option value="Unemployed">Unemployed</option>
-        </select>
-        <input
-          type="text"
-          required="required"
-          placeholder="Organization"
-          value={organization}
-          onChange={(e) => setOrganization(e.target.value)}
-        />
-        <input
-          type="password"
-          required="required"
-          onChange={(e) => setPassword(e.target.value)}
-          placeholder="Password"
-          value={password}
-        />
-        <input
-          type="password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          required="required"
-          placeholder="Confirm Password"
-        />
-        <input
-          className="submit-btn"
-          type="submit"
-          value="Sign Up"
-          onClick={(e) => handleSubmit(e)}
-        />
-        <span>Already Registered?</span>
-        <Link style={{ textDecoration: "none" }} to="/login">
-          <h3>Login</h3>
-        </Link>
-        {error.length > 0 && <p className="error">{error}</p>}
-      </form>
+    <div className="signup-left">
+    <h1>Sign Up</h1>
+    <img src={image1} className="signup-image" alt="image" />
+    </div>
+    <div className="signup-right">
+    
+    <form className="signup-form">
+     
+      <input
+        type="text"
+        style={{ marginRight: "5px" }}
+        required="required"
+        placeholder="First Name"
+        onChange={(e) => setFirstName(e.target.value)}
+        value={firstName}
+      />
+      <input
+        type="text"
+        required="required"
+        placeholder="Last Name"
+        onChange={(e) => setLastName(e.target.value)}
+        value={lastName}
+      />
+    <input
+      type="text"
+      required="required"
+      placeholder="Email"
+      onChange={(e) => setEmail(e.target.value)}
+      value={email}
+    />
+    <select
+      onChange={(e) => setOccupation(e.target.value)}
+      value={occupation}
+    >
+      <option value="Occupation">Occupation</option>
+      <option value="Student">Student</option>
+      <option value="Faculty">Professor</option>
+      <option value="Businessman">Businessman</option>
+      <option value="Employed">Employed</option>
+      <option value="Unemployed">Unemployed</option>
+    </select>
+    <select
+      onChange={(e) => setOrganization(e.target.value)}
+      value={organization}
+    >
+      <option value="Organization">Organization</option>
+      {data.map(org=>{
+        return(
+          <option value={org.name}>{org.name}</option>
+        )
+      })}
+    </select>
+    
+    <input
+      type="password"
+      required="required"
+      onChange={(e) => setPassword(e.target.value)}
+      placeholder="Password"
+      value={password}
+    />
+    <input
+      type="password"
+      value={confirmPassword}
+      onChange={(e) => setConfirmPassword(e.target.value)}
+      required="required"
+      placeholder="Confirm Password"
+    />
+    <input
+      className="btn"
+      type="submit"
+      value="Sign Up"
+      onClick={(e) => handleSubmit(e)}
+    />
+    <span>Already Registered?</span>
+    <Link style={{ textDecoration: "none" }} to="/login">
+      <h3>Login</h3>
+    </Link>
+    {error.length > 0 && <p className="error">{error}</p>}
+  </form>
+    </div>
+     
     </div>
   );
 }

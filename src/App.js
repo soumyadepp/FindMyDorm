@@ -1,6 +1,8 @@
 import "./App.css";
 import { useEffect } from "react";
 import Navbar from "./Components/Navbar/Navbar";
+import Navbarhome from "./Components/Navbarhome/Navbarhome";
+import Navbarsignup from "./Components/Navbarsignup/Navbarsignup";
 import HeroSection from "./Components/HeroSection/HeroSection";
 import Featured from "./Components/Featured/Featured";
 import featuredData from "./Data/featuredData";
@@ -32,7 +34,7 @@ function App() {
             path="/"
             element={
               <>
-              <Navbar/>
+              <Navbarhome/>
                 <HomePage />
               </>
             }
@@ -51,7 +53,13 @@ function App() {
               </div>
             }
           />
-          <Route path="/signup" element={<Signup />} />
+            <Route path="/signup" element={
+            <>
+            <Signup />
+            <Navbarsignup/>
+            </>
+            }
+          />
           <Route path="/verify" element={<Verify />} />
           <Route path="/explore" element={<Explore />} />
           <Route path="/login" element={<Login />} />
